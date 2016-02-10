@@ -1,0 +1,2 @@
+//
+#include "../header/Chara.h"
