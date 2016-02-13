@@ -33,9 +33,6 @@
     <ClCompile Include="source\Se.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\Bgm.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="source\Chara.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -78,15 +75,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="header\[Core]Sound.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="header\Bgm.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="header\Se.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="header\Voice.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="header\Ui.h">

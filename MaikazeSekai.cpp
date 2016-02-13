@@ -6,8 +6,8 @@ MaikazeSekai
 #include "SDL.h"
 #include <iostream>
 
+#include "header\[Core]Sound.h"
 #include "header\Bg.h"
-#include "header\Bgm.h"?
 #include "header\Chara.h"
 #include "header\Item.h"
 #include "header\Npc.h"
@@ -19,8 +19,14 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
-	BgmMgr m_bgm;
-	m_bgm.PlayBGM("z:\\2.mp3", -1);
-	getchar();
+	int i;
+	SoundSys snd;
+	snd.Load(BGM, "z:/1.ogg");
+	cin >> i;
+	cin >> i;
+	//snd.Pause();
+	cin >> i;
+	//snd.Resume();
+	cin >> i;
 	return 0;
 }

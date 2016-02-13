@@ -72,7 +72,6 @@
   <ItemGroup>
     <ClCompile Include="MaikazeSekai.cpp" />
     <ClCompile Include="source\Bg.cpp" />
-    <ClCompile Include="source\Bgm.cpp" />
     <ClCompile Include="source\Chara.cpp" />
     <ClCompile Include="source\Chat.cpp" />
     <ClCompile Include="source\Item.cpp" />
@@ -89,14 +88,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Bg.h" />
-    <ClInclude Include="header\Bgm.h" />
     <ClInclude Include="header\Chara.h" />
     <ClInclude Include="header\Chat.h" />
     <ClInclude Include="header\Item.h" />
     <ClInclude Include="header\Npc.h" />
-    <ClInclude Include="header\Se.h" />
     <ClInclude Include="header\Ui.h" />
-    <ClInclude Include="header\Voice.h" />
     <ClInclude Include="header\[Core]Data.h" />
     <ClInclude Include="header\[Core]Error.h" />
     <ClInclude Include="header\[Core]Image.h" />
