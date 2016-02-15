@@ -9,16 +9,24 @@ MaikazeSekai Sound System
 #include "[Core]Error.h"
 #include "[Core]FileMgr.h"
 
-const int BGM = 1;
-const int SE = 2;
-const int VCE = 3;
-const int VCE2 = 4;
+const int ALLSND = -1;
+const int LOOP = 0;
+const int BGM = 0;
+const int SE = 1;
+const int VCE = 2;
+const int VCE2 = 3;
+const int VCE3 = 4;
+const int VCE4 = 5;
+const int VCE5 = 6;
+const int SNDS = 7;
+const int FULLVOL = 100;
 
 struct Sounds{
 	int channel;
 	int index;
 	int loop;
 	int volumn;
+	string path;
 	SDL_RWops * rw;
 	Mix_Chunk * ck;
 };
@@ -26,34 +34,24 @@ struct Sounds{
 class SoundSys
 {
 public:
-	SoundSys(){
-		Init();
-	}
-	~SoundSys(){
+	SoundSys();
+	~SoundSys();
 
-	}
-	void Init();
-	void Load(int i_channel, string i_path, int i_volumn = 100, const int i_loop = -1);
+	void Load(int i_channel, string i_path, int i_loop = LOOP, int i_volumn = 100);
+	void Unload(int i_channel);
+	void ApplyCfg(int i_bv, int i_sv, int i_vv);
 
-	inline void Play(Sounds i_sound){
-		Mix_PlayChannel(i_sound.channel, i_sound.ck, i_sound.loop);
-	}
-
-	inline void Pause(){
-		Mix_PauseMusic();
-	}
-
-	inline void Resume(){
-		Mix_ResumeMusic();
-	}
-
-	void SetVolumn(int i_channel, const int i_volumn = 100);
-	void ExitAudio();
-	void Exit();
+	inline int GetVol(int i_channel);
+	inline void Play(int i_channel, int i_fadein = 0) {	Mix_FadeInChannel(i_channel, m_snds[i_channel].ck, m_snds[i_channel].loop, i_fadein);}
+	inline void Stop(int i_channel, int i_fadeout = 0) { Mix_FadeOutChannel(i_channel, i_fadeout); }
+	inline void Pause(int i_channel) { Mix_Pause(i_channel); }
+	inline void Resume(int i_channel) {  Mix_Resume(i_channel); }
+	inline void SetVol(int i_channel, int i_volumn = 100){ Mix_Volume(i_channel, i_volumn); }
 
 private:
-	vector<Sounds> m_sounds;
+	Sounds m_snds[SNDS];
 	FileMgr m_filemgr;
+	int m_bgmvol, m_sevol, m_vcevol;
 };
 
 #endif

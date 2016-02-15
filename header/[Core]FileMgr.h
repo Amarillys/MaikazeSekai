@@ -10,6 +10,8 @@ Package System:
 #ifndef MAIKAZE_PACKAGE_H
 #define MAIKAZE_PACKAGE_H
 
+#define AUTOFREE 1
+
 #include <fstream>
 #include <string>
 #include <vector>

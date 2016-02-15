@@ -30,16 +30,10 @@
     <ClCompile Include="source\[Core]Net.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\Se.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="source\Chara.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\Ui.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\Voice.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\Item.cpp">
@@ -52,9 +46,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\Bg.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="source\[Core]Error.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\[Core]FileMgr.cpp">

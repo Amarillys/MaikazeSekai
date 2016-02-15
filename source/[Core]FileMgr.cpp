@@ -8,10 +8,10 @@ void FileMgr::Init()
 	lst.open("pkg.lst",ios::in);
 	if (!lst)
 		cout << "Failed to open the list of packages!" << endl;
+
 	//Read the packages
 	string tmp_str;
 	ifstream tmp_if;
-	//vector<string> tmp_pkg_paths;
 	while (!lst.eof()) 
 	{
 		tmp_str = "";

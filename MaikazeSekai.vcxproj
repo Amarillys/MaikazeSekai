@@ -76,11 +76,8 @@
     <ClCompile Include="source\Chat.cpp" />
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\Npc.cpp" />
-    <ClCompile Include="source\Se.cpp" />
     <ClCompile Include="source\Ui.cpp" />
-    <ClCompile Include="source\Voice.cpp" />
     <ClCompile Include="source\[Core]Data.cpp" />
-    <ClCompile Include="source\[Core]Error.cpp" />
     <ClCompile Include="source\[Core]Image.cpp" />
     <ClCompile Include="source\[Core]Net.cpp" />
     <ClCompile Include="source\[Core]FileMgr.cpp" />
