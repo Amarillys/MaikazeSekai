@@ -37,9 +37,7 @@ void Images::Load(int i_id, string i_path, int i_x, int i_y, int i_mtime, int i_
 		}
 		newImg.tex = SDL_CreateTextureFromSurface(m_ren, newImg.sur);
 		newImg.id = i_id;
-		//SDL_QueryTexture(newImg.tex, NULL, NULL, &(newImg.rect.w), &newImg.rect.h);
-		newImg.rect.w = 292;
-		newImg.rect.h = 247;
+		SDL_QueryTexture(newImg.tex, NULL, NULL, &(newImg.rect.w), &newImg.rect.h);
 		newImg.rect.x = i_x;
 		newImg.rect.y = i_y;
 		newImg.a = i_a;
@@ -62,5 +60,4 @@ void Images::Unload(int i_id){
 void Images::OnDraw(){
 	for (auto it = m_imgs.begin(); it != m_imgs.end(); ++it)
 		SDL_RenderCopy(m_ren, it->tex, NULL, &it->rect);
-	SDL_RenderPresent(m_ren);
 }

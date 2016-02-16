@@ -66,19 +66,13 @@ void SoundSys::Unload(int i_channel){
 	SekaiCheck("Unload channel " + to_string(i_channel) + " Finished");
 }
 
-void SoundSys::ApplyCfg(int i_bv, int i_sv, int i_vv){
-	m_bgmvol = i_bv;
-	m_sevol = i_sv;
-	m_vcevol = i_vv;
+void SoundSys::ApplyCfg(int i_channel, int i_vol){
+	if (i_vol > -1)	m_snds[i_channel].volumn = i_vol;
 }
 
 inline int SoundSys::GetVol(int i_channel){
-	switch (i_channel){
-	case BGM:
-		return m_bgmvol;
-	case SE:
-		return m_sevol;
-	default:
-		return m_vcevol;
-	}
+	if(i_channel > -1 && i_channel < MAXCN)
+		return m_snds[i_channel].volumn;
+	SekaiAlert("the Channel required is Invalid in GetVol().");
+	return 100;
 }

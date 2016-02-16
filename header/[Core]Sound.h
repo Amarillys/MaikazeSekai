@@ -11,15 +11,16 @@ MaikazeSekai Sound System
 
 const int ALLSND = -1;
 const int LOOP = 0;
-const int BGM = 0;
-const int SE = 1;
-const int VCE = 2;
-const int VCE2 = 3;
-const int VCE3 = 4;
-const int VCE4 = 5;
-const int VCE5 = 6;
+const int BGMCN = 0;
+const int SECN = 1;
+const int VCECN = 2;
+const int VCE2CN = 3;
+const int VCE3CN = 4;
+const int VCE4CN = 5;
+const int VCE5CN = 6;
 const int SNDS = 7;
 const int FULLVOL = 100;
+const int MAXCN = 7;
 
 struct Sounds{
 	int channel;
@@ -37,9 +38,9 @@ public:
 	SoundSys();
 	~SoundSys();
 
-	void Load(int i_channel, string i_path, int i_loop = LOOP, int i_volumn = 100);
+	void Load(int i_channel, string i_path, int i_loop = LOOP, int i_fadein = 0);
 	void Unload(int i_channel);
-	void ApplyCfg(int i_bv, int i_sv, int i_vv);
+	void ApplyCfg(int i_channel, int i_vol);
 
 	inline int GetVol(int i_channel);
 	inline void Play(int i_channel, int i_fadein = 0) {	Mix_FadeInChannel(i_channel, m_snds[i_channel].ck, m_snds[i_channel].loop, i_fadein);}

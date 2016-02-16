@@ -76,7 +76,6 @@
     <ClCompile Include="source\Chat.cpp" />
     <ClCompile Include="source\Item.cpp" />
     <ClCompile Include="source\Npc.cpp" />
-    <ClCompile Include="source\Ui.cpp" />
     <ClCompile Include="source\[Core]Data.cpp" />
     <ClCompile Include="source\[Core]Image.cpp" />
     <ClCompile Include="source\[Core]Net.cpp" />
@@ -89,14 +88,17 @@
     <ClInclude Include="header\Chat.h" />
     <ClInclude Include="header\Item.h" />
     <ClInclude Include="header\Npc.h" />
-    <ClInclude Include="header\Ui.h" />
     <ClInclude Include="header\[Core]Data.h" />
     <ClInclude Include="header\[Core]Error.h" />
     <ClInclude Include="header\[Core]Image.h" />
+    <ClInclude Include="header\[Core]Math.h" />
     <ClInclude Include="header\[Core]Net.h" />
     <ClInclude Include="header\[Core]FileMgr.h" />
     <ClInclude Include="header\[Core]Sound.h" />
     <ClInclude Include="Version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
