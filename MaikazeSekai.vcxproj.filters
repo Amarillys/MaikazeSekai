@@ -42,18 +42,12 @@
     <ClCompile Include="source\Npc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\Bg.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="source\[Core]FileMgr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Version.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="header\Bg.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="header\[Core]Data.h">
@@ -87,6 +81,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="header\[Core]Math.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Csv.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,7 +17,7 @@ Images::~Images()
 	//Unload all the textures
 	for (auto it = m_imgs.begin(); it != m_imgs.end(); ++it){
 		SDL_DestroyTexture(it->tex);
-		m_files.FreeRW(it->index);
+		m_files->FreeRW(it->index);
 	}
 	IMG_Quit();
 }
@@ -30,7 +30,7 @@ void Images::Load(int i_id, string i_path, int i_x, int i_y, int i_mtime, int i_
 		Unload(i_id);
 	//create a new texture struct and add it to the vector
 	Image newImg;
-	if (m_files.ReadRW(i_path, &(newImg.rw), newImg.index)){
+	if (m_files->ReadRW(i_path, &(newImg.rw), newImg.index)){
 		if (!(newImg.sur = IMG_Load_RW(newImg.rw, AUTOFREE))){
 			SekaiAlert("cannot analyse the picture file from " + i_path);
 			return;
@@ -50,7 +50,7 @@ void Images::Unload(int i_id){
 	for (auto it = m_imgs.begin(); it != m_imgs.end(); ++it){
 		if (it->id == i_id){
 			SDL_DestroyTexture(it->tex);
-			m_files.FreeRW(it->index);
+			m_files->FreeRW(it->index);
 			return;
 		}
 	}

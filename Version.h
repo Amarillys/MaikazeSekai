@@ -1,4 +1,9 @@
 /*
+2016-02-18
+**Change the filemgr to be unique, and the Class that use filemgr must be Init()
+--delete BG
+++Plan to use csv and separate the ui from programs.
+
 2016-02-16
 
 **--Separate custom functions from main.cpp to API.h[Failed]

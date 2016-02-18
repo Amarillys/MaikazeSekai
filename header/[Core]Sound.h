@@ -37,11 +37,12 @@ class SoundSys
 public:
 	SoundSys();
 	~SoundSys();
-
+	
 	void Load(int i_channel, string i_path, int i_loop = LOOP, int i_fadein = 0);
 	void Unload(int i_channel);
 	void ApplyCfg(int i_channel, int i_vol);
 
+	inline void Init(FileMgr * i_files){ m_files = i_files; }
 	inline int GetVol(int i_channel);
 	inline void Play(int i_channel, int i_fadein = 0) {	Mix_FadeInChannel(i_channel, m_snds[i_channel].ck, m_snds[i_channel].loop, i_fadein);}
 	inline void Stop(int i_channel, int i_fadeout = 0) { Mix_FadeOutChannel(i_channel, i_fadeout); }
@@ -51,7 +52,7 @@ public:
 
 private:
 	Sounds m_snds[SNDS];
-	FileMgr m_filemgr;
+	FileMgr * m_files;
 	int m_bgmvol, m_sevol, m_vcevol;
 };
 

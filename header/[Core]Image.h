@@ -30,12 +30,12 @@ public:
 	void SetPos(int i_id, int i_x, int i_y, int i_mtime);
 	void SetAlpha(int i_id, int i_a, int i_atime);
 
-	inline void Init(SDL_Renderer * i_ren){ m_ren = i_ren; }
+	inline void Init(SDL_Renderer * i_ren, FileMgr * i_file){ m_ren = i_ren; m_files = i_file; }
 	void OnDraw();
 	void OnNext();
 
 private:
-	FileMgr m_files;
+	FileMgr * m_files;
 	vector<Image> m_imgs;
 	SDL_Renderer * m_ren;
 };

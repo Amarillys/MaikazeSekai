@@ -45,7 +45,7 @@ void SoundSys::Load(int i_channel, string i_path, int i_loop, int i_fadein)
 	m_snds[i_channel].channel = i_channel;
 	m_snds[i_channel].loop = i_loop - 1;
 	m_snds[i_channel].path = i_path;
-	if (m_filemgr.ReadRW(i_path, &(m_snds[i_channel].rw), m_snds[i_channel].index))
+	if (m_files->ReadRW(i_path, &(m_snds[i_channel].rw), m_snds[i_channel].index))
 	{
 		if (!(m_snds[i_channel].ck = Mix_LoadWAV_RW(m_snds[i_channel].rw, AUTOFREE))){
 			SekaiAlert("cannot analyse the music file from " + i_path);
@@ -61,7 +61,7 @@ void SoundSys::Unload(int i_channel){
 	if (m_snds[i_channel].ck)
 		Mix_FreeChunk(m_snds[i_channel].ck);
 	if (m_snds[i_channel].index > -1)
-		m_filemgr.FreeRW(m_snds[i_channel].index);
+		m_files->FreeRW(m_snds[i_channel].index);
 	m_snds[i_channel] = { i_channel, -1, -1, GetVol(i_channel), "blank", nullptr, nullptr };
 	SekaiCheck("Unload channel " + to_string(i_channel) + " Finished");
 }
