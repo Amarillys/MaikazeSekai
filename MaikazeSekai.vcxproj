@@ -74,7 +74,7 @@
     <ClCompile Include="source\Chara.cpp" />
     <ClCompile Include="source\Chat.cpp" />
     <ClCompile Include="source\Item.cpp" />
-    <ClCompile Include="source\Npc.cpp" />
+    <ClCompile Include="source\UI.cpp" />
     <ClCompile Include="source\[Core]Data.cpp" />
     <ClCompile Include="source\[Core]Image.cpp" />
     <ClCompile Include="source\[Core]Net.cpp" />
@@ -82,11 +82,11 @@
     <ClCompile Include="source\[Core]Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="API.hpp" />
     <ClInclude Include="header\Chara.h" />
     <ClInclude Include="header\Chat.h" />
-    <ClInclude Include="header\Csv.h" />
     <ClInclude Include="header\Item.h" />
-    <ClInclude Include="header\Npc.h" />
+    <ClInclude Include="header\UI.h" />
     <ClInclude Include="header\[Core]Data.h" />
     <ClInclude Include="header\[Core]Error.h" />
     <ClInclude Include="header\[Core]Image.h" />

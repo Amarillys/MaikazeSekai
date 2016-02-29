@@ -4,13 +4,17 @@ MaikazeSekai Character System
 #ifndef MAIKAZE_CHARA_H
 #define MAIKAZE_CHARA_H
 
-#include "[Core]Image.h"
-#include "[Core]Error.h"
+#include "../API.hpp"
 
-class CharaMgr
+class Charas
 {
 public:
-
+	void Load();
+	void Unload();
+	void Show();
+	void Hide();
+	void Susume();
+	void Refresh();
 private:
 
 };

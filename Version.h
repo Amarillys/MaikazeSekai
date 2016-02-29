@@ -1,4 +1,9 @@
 /*
+2016-02-29
+**Separate custom functions from main.cpp to API.hpp
+**Separate UI from main.cpp
+--Push the Npc into Chara
+
 2016-02-18
 **Change the filemgr to be unique, and the Class that use filemgr must be Init()
 --delete BG

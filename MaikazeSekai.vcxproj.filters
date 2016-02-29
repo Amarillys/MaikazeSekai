@@ -21,28 +21,28 @@
     <ClCompile Include="source\[Core]Data.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\[Core]Image.cpp">
+    <ClCompile Include="source\[Core]FileMgr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\[Core]Sound.cpp">
+    <ClCompile Include="source\[Core]Image.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\[Core]Net.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\Chara.cpp">
+    <ClCompile Include="source\[Core]Sound.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\Item.cpp">
+    <ClCompile Include="source\Chara.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="source\Chat.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\Npc.cpp">
+    <ClCompile Include="source\Item.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="source\[Core]FileMgr.cpp">
+    <ClCompile Include="source\UI.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,9 +65,6 @@
     <ClInclude Include="header\Chara.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="header\Npc.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="header\[Core]Net.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -83,7 +80,10 @@
     <ClInclude Include="header\[Core]Math.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="header\Csv.h">
+    <ClInclude Include="API.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="header\UI.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
