@@ -14,12 +14,22 @@ struct button{
 	void(*event)();
 };
 
+
 class UI{
 public:
+	UI();
+	~UI();
+	void Init();
+	void Receive();
 	void Susume();
 	void Refresh();
+	void JmpTo();
+
 private:
-	int m_i;
+	NPC m_npc;
+	vector<button> m_btns;
+	//0 - chara
+	int m_static;
 };
 
 #endif

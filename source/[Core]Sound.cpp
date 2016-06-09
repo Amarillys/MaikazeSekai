@@ -21,10 +21,10 @@ SoundSys::SoundSys()
 SoundSys::~SoundSys()
 {
 	//fadeout and Unload
-	Stop(ALLSND, 600);
+    Stop(ALLSND, 600);
+    for (int i = 0; i < SNDS; ++i)
+        Unload(i);
 	Mix_CloseAudio();
-	for (int i = 0; i < SNDS; ++i)
-		Unload(i);
 }
 
 void SoundSys::Load(int i_channel, string i_path, int i_loop, int i_fadein)

@@ -31,7 +31,8 @@ class FileMgr
 {
 public:
 	void Init();
-	void AddRW(int i_index, SDL_RWops* i_rw, SDL_RWops** o_rw);
+    void Test();
+    void AddRW(int i_index, string i_path, SDL_RWops* i_rw, SDL_RWops** o_rw);
 	int GetIndex(string i_path);
 	void GetRW(string i_path, SDL_RWops** o_rw);
 	void FreeRW(int i_index);

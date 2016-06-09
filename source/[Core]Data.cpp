@@ -15,9 +15,9 @@ void Config::ReadCfgFile()
 	char line[32] = { 0 };
 	int key = 0;
 	int value = 0;
-	while (file.getline(line, sizeof(line))){
+    while (file.getline(line, sizeof(line))){
 		//skip the line start with '#'(Regarded as comment)
-		if (line[0] == '#')
+        if (line[0] == '#')
 			continue;
 		std::stringstream word(line);
 		word >> key;
@@ -48,4 +48,58 @@ void Config::CreateCfg()
 	//write down the content of config.ini
 
 	file.close();
+}
+
+void CSV::Init(string i_file)
+{
+    //Open and check
+    intmap.clear();
+    strmap.clear();
+
+    ifstream l_csv;
+    l_csv.open(i_file, ios::in);
+    if (!l_csv) 
+        SekaiAlert(i_file + "not found!\n");
+
+    //1 = str,  0 = int
+    char line[64] = { 0 };
+    int key = 0, value = 0;
+    int type = 0;
+    string strval;
+    while (l_csv.getline(line, sizeof(line))){
+        //skip the line start with '#'(Regarded as comment)
+        if (line[0] == '#')
+            continue;
+        std::stringstream word(line);
+        word >> key;
+        word >> type;
+        if (type == 0){
+            word >> value;
+            intmap.insert(pair<int, int>(key, value));
+        } else {
+            word >> strval;
+            strmap.insert(pair<int, string>(key, strval));
+        }
+    }
+    l_csv.close();
+}
+
+int CSV::LoadInt(int i_index) {
+    //Return the value from intmap
+    auto it = intmap.find(i_index);
+    if (it == intmap.end()){
+        SekaiAlert("fail to get the value of key" + to_string(i_index));
+        return -1;
+    }
+    return intmap[i_index];
+}
+
+string CSV::LoadStr(int i_index) {
+    //Return the value from strmap
+    auto it = strmap.find(i_index);
+    if (it == strmap.end()) {
+        SekaiAlert("fail to get the value of key" + to_string(i_index));
+        return NULL;
+    }
+    return strmap[i_index];
 }

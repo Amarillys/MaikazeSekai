@@ -17,6 +17,7 @@ Images::~Images()
 	//Unload all the textures
 	for (auto it = m_imgs.begin(); it != m_imgs.end(); ++it){
 		SDL_DestroyTexture(it->tex);
+        SDL_FreeSurface(it->sur);
 		m_files->FreeRW(it->index);
 	}
 	IMG_Quit();
@@ -36,6 +37,7 @@ void Images::Load(int i_id, string i_path, int i_x, int i_y, int i_mtime, int i_
 			return;
 		}
 		newImg.tex = SDL_CreateTextureFromSurface(m_ren, newImg.sur);
+        SDL_FreeSurface(newImg.sur);
 		newImg.id = i_id;
 		SDL_QueryTexture(newImg.tex, NULL, NULL, &(newImg.rect.w), &newImg.rect.h);
 		newImg.rect.x = i_x;
@@ -50,6 +52,7 @@ void Images::Unload(int i_id){
 	for (auto it = m_imgs.begin(); it != m_imgs.end(); ++it){
 		if (it->id == i_id){
 			SDL_DestroyTexture(it->tex);
+            SDL_FreeSurface(it->sur);
 			m_files->FreeRW(it->index);
 			return;
 		}

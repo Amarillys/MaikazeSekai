@@ -24,4 +24,16 @@ public:
 private:
 	map<int, int> cfgmap;
 };
+
+class CSV{
+public:
+    void Init(string i_file);
+    int LoadInt(int i_index);
+    string LoadStr(int i_index);
+
+private:
+    map<int, int> intmap;
+    map<int, string> strmap;
+
+};
 #endif

@@ -44,7 +44,7 @@ bool FileMgr::ReadRW(string i_path, SDL_RWops** o_rw_ptr, int& o_index)
 	if (res)
 	{
 		o_index = GetIndex(i_path);
-		AddRW(o_index, SDL_RWFromFile(i_path.c_str(), "rb"), o_rw_ptr);
+		AddRW(o_index, i_path, SDL_RWFromFile(i_path.c_str(), "rb"), o_rw_ptr);
 		return true;
 	}
 
@@ -61,17 +61,33 @@ bool FileMgr::ReadRW(string i_path, SDL_RWops** o_rw_ptr, int& o_index)
 
 int FileMgr::GetIndex(string i_path)
 {
-	for (auto it = m_files.begin(); it != m_files.end(); ++it)
-	if (it->path == i_path)
-		return it->index;
+    //return if
+    bool got = false, exist;
+    int index = 0;
+    while (!got)
+    {
+        exist = false;
+        for (auto it = m_files.begin(); it != m_files.end(); ++it)
+        if (index == it->index)
+            exist = true;
+        if (exist)
+        {
+            index++;
+            continue;
+        }
+        else
+            return index;
+    }
+	
 	//SekaiAlert("Cannot find the file" + i_path);
-	return -1;
+	return m_files.size();
 }
 
-void FileMgr::AddRW(int i_index, SDL_RWops* i_rw, SDL_RWops** o_rw_ptr)
+void FileMgr::AddRW(int i_index, string i_path, SDL_RWops* i_rw, SDL_RWops** o_rw_ptr)
 {
 	RWPack newRW;
 	newRW.index = i_index;
+    newRW.path = i_path;
 	*o_rw_ptr = newRW.rw = i_rw;
 	m_files.push_back(newRW);
 }
@@ -87,7 +103,7 @@ void FileMgr::FreeRW(int i_index)
 	{
 		if (it->index == i_index)
 		{
-			delete it->rw;
+            SDL_RWclose(it->rw);
 			m_files.erase(it);
 			break;
 		}
